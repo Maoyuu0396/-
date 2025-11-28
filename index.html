@@ -4,25 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMP4422 - 台球场景演示</title>
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #1a1a2e;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #4fc3f7;
+            margin-bottom: 20px;
+        }
+        
+        #webgl-canvas {
+            display: block;
+            margin: 0 auto;
+            border: 3px solid #4fc3f7;
+            background: #0c1e3e;
+            width: 800px;
+            height: 600px;
+        }
+        
+        #controls {
+            margin: 20px 0;
+        }
+        
+        button {
+            background: #4fc3f7;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 0 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            background: #29b6f6;
+        }
+        
+        #info {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
-    <div id="container">
-        <h1>自动台球桌演示</h1>
-        <canvas id="webgl-canvas" width="1200" height="800"></canvas>
-        <div id="controls">
-            <button id="scene1">场景1: 瞄准击球</button>
-            <button id="scene2">场景2: 球体碰撞</button>
-            <button id="scene3">场景3: 黑球入袋</button>
-            <button id="reset">重置场景</button>
-        </div>
-        <div id="info">
-            <p>当前场景: <span id="current-scene">场景1 - 瞄准击球</span></p>
-        </div>
+    <h1>自动台球桌演示</h1>
+    <canvas id="webgl-canvas" width="800" height="600">
+        你的浏览器不支持Canvas
+    </canvas>
+    <div id="controls">
+        <button id="scene1">场景1: 瞄准击球</button>
+        <button id="scene2">场景2: 球体碰撞</button>
+        <button id="scene3">场景3: 黑球入袋</button>
+        <button id="reset">重置场景</button>
+    </div>
+    <div id="info">
+        <p>当前场景: <span id="current-scene">场景1 - 瞄准击球</span></p>
     </div>
 
+    <script>
+        // 基础测试 - 先确保画布可见
+        const canvas = document.getElementById('webgl-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // 在画布上绘制测试图形
+        ctx.fillStyle = '#4fc3f7';
+        ctx.font = '24px Arial';
+        ctx.fillText('3D场景加载中...', 300, 250);
+        
+        ctx.fillStyle = 'white';
+        ctx.font = '16px Arial';
+        ctx.fillText('如果看到这个文字，说明Canvas工作正常', 250, 300);
+        
+        // 绘制简单的台球桌示意
+        ctx.fillStyle = '#1b5e20';
+        ctx.fillRect(100, 100, 600, 300);
+        
+        ctx.fillStyle = '#fff';
+        ctx.beginPath();
+        ctx.arc(400, 250, 20, 0, Math.PI * 2);
+        ctx.fill();
+        
+        ctx.fillStyle = '#000';
+        ctx.beginPath();
+        ctx.arc(500, 250, 20, 0, Math.PI * 2);
+        ctx.fill();
+        
+        console.log('基础HTML和Canvas测试通过');
+    </script>
+
+    <!-- 暂时注释掉复杂的3D代码，先测试基础 -->
+    <!--
     <script src="js/matrix.js"></script>
     <script src="js/shaders.js"></script>
     <script src="js/main.js"></script>
+    -->
 </body>
 </html>
