@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    font-family: 'Arial', sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    color: #4fc3f7;
+}
+
+#webgl-canvas {
+    border: 3px solid #4fc3f7;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    background: #0c1e3e;
+}
+
+#controls {
+    margin: 25px 0;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+button {
+    background: linear-gradient(145deg, #4fc3f7, #29b6f6);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(79, 195, 247, 0.3);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 195, 247, 0.5);
+    background: linear-gradient(145deg, #29b6f6, #4fc3f7);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    background: #666;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+#info {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#current-scene {
+    color: #4fc3f7;
+    font-weight: bold;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    #webgl-canvas {
+        width: 95vw;
+        height: 60vh;
+    }
+    
+    #controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    button {
+        width: 200px;
+    }
+}
