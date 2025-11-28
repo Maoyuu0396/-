@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP4422 - 台球场景演示</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>自动台球桌演示</h1>
+        <canvas id="webgl-canvas" width="1200" height="800"></canvas>
+        <div id="controls">
+            <button id="scene1">场景1: 瞄准击球</button>
+            <button id="scene2">场景2: 球体碰撞</button>
+            <button id="scene3">场景3: 黑球入袋</button>
+            <button id="reset">重置场景</button>
+        </div>
+        <div id="info">
+            <p>当前场景: <span id="current-scene">场景1 - 瞄准击球</span></p>
+        </div>
+    </div>
+
+    <script src="js/matrix.js"></script>
+    <script src="js/shaders.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
